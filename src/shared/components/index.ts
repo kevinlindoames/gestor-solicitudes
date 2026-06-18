@@ -16,3 +16,4 @@ export { PageHeader } from "./PageHeader";
 export { Select } from "./Select";
 export { Textarea } from "./Textarea";
 export { ToastProvider, useToast } from "./ToastProvider";
+export { Skeleton } from "./Skeleton";

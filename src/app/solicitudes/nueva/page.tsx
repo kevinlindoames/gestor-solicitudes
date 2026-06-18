@@ -12,12 +12,12 @@ export default function NuevaSolicitudPage() {
           title="Nueva solicitud"
           description="Registra una nueva solicitud interna con la información necesaria para su atención."
           actions={
-            <Link href="/solicitudes">
-              <Button variant="secondary">
+            <Button asChild variant="secondary">
+              <Link href="/solicitudes">
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 Volver a bandeja
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           }
         />
 

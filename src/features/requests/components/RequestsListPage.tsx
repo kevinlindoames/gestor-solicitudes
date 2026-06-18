@@ -6,6 +6,7 @@ import { Plus } from "lucide-react";
 
 import {
   RequestFilters,
+  RequestsListSkeleton,
   RequestTable,
 } from "@/features/requests/components";
 import { useRequests } from "@/features/requests/hooks";
@@ -15,7 +16,6 @@ import {
   Button,
   EmptyState,
   ErrorState,
-  LoadingState,
 } from "@/shared/components";
 
 const DEFAULT_FILTERS: RequestFiltersType = {
@@ -36,15 +36,9 @@ export function RequestsListPage() {
     [requests, filters]
   );
 
-  if (isLoading) {
-    return (
-      <LoadingState
-        title="Cargando solicitudes"
-        description="Estamos obteniendo la bandeja de solicitudes."
-      />
-    );
-  }
-
+ if (isLoading) {
+  return <RequestsListSkeleton />;
+}
   if (isError) {
     return (
       <ErrorState

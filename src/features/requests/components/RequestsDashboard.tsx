@@ -5,6 +5,7 @@ import { ArrowRight, Plus } from "lucide-react";
 
 import {
   RequestPriorityBadge,
+  RequestsDashboardSkeleton,
   RequestStatusBadge,
   RequestSummaryCards,
 } from "@/features/requests/components";
@@ -19,7 +20,6 @@ import {
   CardTitle,
   EmptyState,
   ErrorState,
-  LoadingState,
 } from "@/shared/components";
 import { formatDate } from "@/shared/utils";
 
@@ -27,13 +27,8 @@ export function RequestsDashboard() {
   const { data: requests = [], isLoading, isError, refetch } = useRequests();
 
   if (isLoading) {
-    return (
-      <LoadingState
-        title="Cargando dashboard"
-        description="Estamos obteniendo el resumen de solicitudes."
-      />
-    );
-  }
+  return <RequestsDashboardSkeleton />;
+}
 
   if (isError) {
     return (
